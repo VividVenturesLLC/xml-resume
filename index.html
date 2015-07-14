@@ -2,6 +2,7 @@
  <html>
    <head>
      <title>XML-Resume 0.01</title>
+     <!-- Reference http://www.hropenstandards.org/-->
      <meta charset="UTF-8">
      <!--For latest revision updates see https://developers.google.com/speed/libraries/  -->
        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
@@ -33,8 +34,8 @@
 
     <div id="formView" class="container">
     <form>
-      <fieldset>
-        <legend class="label label-primary">Login</legend>
+      <div class="input-group">
+      <div class="well well-sm"><h4>Login</h4></div>
           <label>Email:
                 <input type="email" name="eMail" class="form-control"></label>
           <label>Password:
@@ -43,24 +44,41 @@
         <button class="btn btn-lg btn-default" type="submit">New Account</button>
         <span class="label label-default">Logged in / Not logged in</span>
         <span class="label label-default">Paid / Not paid</span>
-      </fieldset>
-      <fieldset>
-        <legend class="label label-primary">Contact Information</legend>
+      </div>
+<br/>
+      <div class="input-group">
+      <div class="well well-sm">Contact Information</div>
         <label>Make public:
-          <input type="checkbox" value=""></label><br/>
-          Name:
-          <label>First:
-               <input type="text" name="firstName" class="form-control" placeholder="firstName"></label>
-          <label>Last:
-                <input type="text" name="lastName" class="form-control" placeholder="lastName"></label>
-          <label>Middle:
-                <input type="text" name="middleName" class="form-control" placeholder="middleName"></label><br/>
-          Phone:
-          <label>Mobile:
+          <input type="checkbox" value="" name="MakePublic"></label>
+          <br/>
+       </div>
+<div class="input-group">
+        <label>Salutation:
+          <select name="PreferredSalutationCode" class="form-control">
+            <option>Salut</option>
+            <option value="Ms">Ms.</option>
+            <option value="Mrs">Mrs.</option>
+            <option value="Mr">Mr.</option>
+            <option value="Dr">Dr.</option>
+          </select>
+        </label>
+          <label>First Name:
+               <input type="text" name="GivenName" class="form-control" placeholder="GivenName">
+          </label>
+          <label>Last Name:
+                <input type="text" name="FamilyName" class="form-control" placeholder="FamilyName">
+          </label>
+          <label>Middle Name:
+                <input type="text" name="MiddleName" class="form-control" placeholder="MiddleName">
+          </label><br/>
+</div>
+<div class="input-group" name="ChannelCode">
+          Telephone:
+          <label><UseCode>Personal</UseCode> Mobile:
                 <input type="tel" name="mobileTel" class="form-control" placeholder="mobileTel"></label>
-          <label>Home:
+          <label><UseCode>Personal</UseCode> Home:
                 <input type="tel" name="homeTel" class="form-control" placeholder="homeTel"></label>
-          <label>Office:
+          <label><UseCode>Business</UseCode>:
                 <input type="tel" name="officeTel" class="form-control" placeholder="officeTel"></label><br/>
           Social:
           <label>Email:
@@ -69,7 +87,9 @@
                 <input type="url" name="myLinks" class="form-control" size="50" placeholder="myLinks"></label><br/>
 
           <!--get country data from http://www.geonames.org/ -->
-          Mailing:
+          <!-- Mailing: -->
+</div>
+<div class="input-group">
           <label>Country:
                  <select name="state" class="form-control">
                     <option value="undef">-</option>
@@ -77,34 +97,132 @@
                     <option value="CA">Canada</option>
                     <option value="MX">Mexico</option>
                 </select></label>
-          <!-- populate state option based on country selection-->
-          <label>State:
-                 <select name="state" class="form-control">
-                    <option value="AL">AK</option>
+          <label>PostalCode:
+                <input type="text" name="PostalCode" class="form-control" placeholder="PostalCode"></label><br/>
+</div>
+<div class="input-group">
+          <label>AddressLine:
+                <input type="text" name="AddressLine" class="form-control" placeholder="AddressLine"></label>
+          <!-- populate city based on postal code selection selection-->
+          <label>CityName:
+                <input type="text" name="CityName" class="form-control" placeholder="CityName"></label>
+          <!-- populate state option based on country (and postal code) selection-->
+          <label>CountrySubDivisionCode:
+                 <select name="CountrySubDivisionCode" class="form-control">
+                    <option value="undef">-</option>
+                    <option value="AK">AK</option>
                     <option value="AL">AL</option>
                     <option value="MI">MI</option>
                     <option value="WY">WY</option>
                 </select></label>
-          <label>Street:
-                <input type="text" name="streetAddress" class="form-control" placeholder="streetAddress"></label><br/>
-          <label>City:
-                <input type="text" name="city" class="form-control" placeholder="city"></label>
-          <label>Zip:
-                <input type="text" name="zip" class="form-control" placeholder="zip"></label><br/>
-      </fieldset>
-      <fieldset>
-        <legend class="label label-primary">Objective</legend>
+      </div>
+      <!--/CandidatePerson-->
+
+      <br/>
+      <div class="input-group">
+      <CandidateProfile>
+        <div class="well well-sm">Availability</div>
+         <PersonAvailability>
+           <label>NoticePeriodMeasure:
+             <select name="NoticePeriodMeasure" class="form-control">
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+               <option value="not">Not Available</option>
+             </select>
+           </label>
+           <label>unitCode:
+             <select name="unitCode" class="form-control">
+               <option value="week">week</option>
+               <option value="month">month</option>
+               <option value="year">year</option>
+             </select>
+           </label>
+         </PersonAvailability>
+      </div>
+<br/>
+      <div class="input-group">
+        <div class="well well-sm">Objective</div>
           <label>Objective Title:
                 <input type="text" name="objectiveTitle" class="form-control"  placeholder="objectiveTitle"></label>
           <label>Objective Description:
                 <input type="text" name="objectiveDescription" placeholder="objectiveDescription" class="form-control"></label>
         <label>Display:
           <input type="checkbox" value="" name="displayObjective"></label><br/>
+      </div>
 
-      </fieldset>
-      <fieldset>
+
+      <div class="input-group">
+        <div class="well well-sm">CandidateEmployerPreferences
+        </div>
+         <CandidateEmployerPreferences>
+           <label>CandidateEmployerPreferences:
+             <select name="IndustryCode" class="form-control">
+               <option value="undef">None</option>
+               <option value="FinancialServices">Financial Services</option>
+               <option value="Brokerage">Brokerage</option>
+             </select>
+           </label>
+         </CandidateEmployerPreferences>
+         <CandidatePositionPreferences>
+           <label>Candidate Position Preferences:
+             <select name="PositionTitle" class="form-control">
+               <option value="undef">None</option>
+               <option value="FinancialAnalyst">Financial Analyst</option>
+               <option value="FinancialPlanner">Financial Planner</option>
+               <option value="Broker">Broker</option>
+             </select>
+           </label><br/>
+         </CandidatePositionPreferences>
+      </div>
+      <div class="input-group">
+             <OfferedRemunerationPackage>
+               <RemunerationRange>
+                 <RemunerationMinimumAmount currencyID="USD">
+                   <label>Remuneration minimum:
+                   <span class="input-group-addon">$</span>
+                   <input type="text" name="RemunerationMinimumAmount" class="form-control"  placeholder="RemunerationMinimumAmount" aria-label="Amount (to the nearest dollar)"></label>
+                 </RemunerationMinimumAmount>
+                 <RemunerationRateIntervalCode>
+                 <label>RemunerationRateInterval
+                   <select name="RemunerationRateIntervalCode" class="form-control">
+                    <option value="undef">None</option>
+                    <option value="Hour">Hour</option>
+                    <option value="Week">Week</option>
+                    <option value="Month">Month</option>
+                    <option value="Year">Year</option>
+                   </select>
+                 </label>
+                 </RemunerationRateIntervalCode>
+               </RemunerationRange>
+             </OfferedRemunerationPackage>
+      </div>
+
+         <code>
+         <pre>
+<CandidatePositionPreferences>
+  <PositionTitle>Financial Analyst</PositionTitle>
+  <PositionTitle>Financial Planner</PositionTitle>
+  <PositionTitle>Broker</PositionTitle>
+  <OfferedRemunerationPackage>
+    <RemunerationRange>
+      <RemunerationMinimumAmount currencyID="USD">95000</RemunerationMinimumAmount>
+      <RemunerationRateIntervalCode>Year</RemunerationRateIntervalCode>
+      </RemunerationRange>
+  </OfferedRemunerationPackage>
+  <RelocationConsidered>
+    <RelocationConsideredIndicator>true</RelocationConsideredIndicator>
+      <oa:Description>Will consider positions in the greater Chicago metropolitan area and in the Northeast United States.</oa:Description>
+   </RelocationConsidered>
+</CandidatePositionPreferences>
+       </pre>
+     </code>
+
+      <br/>
+      <div class="input-group">
         <!-- Could also be called Experience or Work History -->
-        <legend class="label label-primary">Employment History</legend>
+        <div class="well well-sm">Employment History</div>
           <label>Start Date:
                 <input type="text" name="startDate"  placeholder="startDate" class="form-control"></label>
           <label>End Date:
@@ -115,9 +233,10 @@
                 <input type="text" name="jobTitle" class="form-control" placeholder="jobTitle"></label>
           <label>Job Description:
                <textarea name="jobDescription" class="form-control" rows="3" cols="50" placeholder="jobDescription"></textarea></label>
-      </fieldset>
-      <fieldset>
-        <legend class="label label-primary">Skills</legend>
+      </div>\
+      <br/>
+      <div class="input-group">
+        <div class="well well-sm">Skills</div>
           <label>Category:
                  <select name="skillCategory" class="form-control">
                     <option value="management">Management</option>
@@ -135,9 +254,10 @@
           <label>Tags:
                <textarea name="skillTags" class="form-control" rows="3" cols="50" placeholder="skillTags"></textarea></label>
                <br/>
-      </fieldset>
-      <fieldset>
-        <legend class="label label-primary">Education and Training</legend>
+      </div>
+      <br/>
+      <div class="input-group">
+        <div class="well well-sm">Education and Training</div>
           <label>Organization Name:
                 <input type="text" name="organizationNameEdu" class="form-control" placeholder="organizationNameEdu"></label>
           <label>Degree:
@@ -146,21 +266,15 @@
                 <input type="text" name="certification" class="form-control" placeholder="certification"></label>
           <label>Completion Date
                 <input type="text" name="completionDateEdu" class="form-control" placeholder="completionDateEdu"></label>
-      </fieldset>
-      <fieldset>
-        <legend class="label label-primary">Summary of Qualifications</legend>
+      </div>
+      <br/>
+      <div class="input-group">
+        <div class="well well-sm">Summary of Qualifications</div>
           <label>Bulleted List:
                <textarea name="summaryQualifications" class="form-control" rows="3" cols="50" placeholder="summaryQualifications"></textarea></label><br/>
-
-      </fieldset>
-      <fieldset>
-        <legend class="label label-primary">Legend Description</legend>
-          <label>Label:
-                <input type="" name="" class="form-control"></label>
-      </fieldset>
-
-
-
+      </div>
+    </CandidateProfile>
+      <br/>
     </form>
     </div><!--/container-->
 
