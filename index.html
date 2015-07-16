@@ -1,17 +1,23 @@
 <!DOCTYPE html>
  <html>
+
    <head>
      <title>XML-Resume 0.01</title>
-     <!-- Reference http://www.hropenstandards.org/-->
+     <!-- Reference http://www.hropenstandards.org/  for data definition-->
      <meta charset="UTF-8">
      <!--For latest revision updates see https://developers.google.com/speed/libraries/  -->
        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-       <script src="js/app.js"></script>
      <!--For latest revision updates see http://www.bootstrapcdn.com/  -->
        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+
+     <!--Custom js and theme for this form page -->
+       <script src="js/app.js"></script>
+       <link href="theme/form_theme.css" rel="stylesheet">
    </head>
+
+<!-- ======== ======== ======== ======== ======== ======== ======== ======== -->
    <body>
     <dl class="dl-horizontal">
       <dt>XML-Resume</dt>
@@ -32,10 +38,10 @@
       </ul>
     </div> <!--/container-->
 
-    <div id="formView" class="container">
-    <form>
+    <div id="formLogin" class="container" title="formLogin">
+     <form id="CandidateLogin">
       <div class="input-group">
-      <div class="well well-sm"><h4>Login</h4></div>
+          <div class="well well-sm"><h4>Login</h4></div>
           <label>Email:
                 <input type="email" name="eMail" class="form-control"></label>
           <label>Password:
@@ -43,16 +49,22 @@
         <button class="btn btn-lg btn-primary" type="submit">Sign in</button>
         <button class="btn btn-lg btn-default" type="submit">New Account</button>
         <span class="label label-default">Logged in / Not logged in</span>
-        <span class="label label-default">Paid / Not paid</span>
+        <span class="label label-default">Paid / Pay Now</span>
       </div>
-<br/>
+     </form>
+    </div><!--/formLogin-->
+    <br>
+    <!--CandidatePerson-->
+    <div id="formView" class="container" title="CandidatePerson">
+     <form id="CandidatePerson">
       <div class="input-group">
-      <div class="well well-sm">Contact Information</div>
-        <label>Make public:
-          <input type="checkbox" value="" name="MakePublic"></label>
-          <br/>
-       </div>
-<div class="input-group">
+        <div class="well well-sm">Make public</div>
+          <label>Contact Information:
+           <input type="checkbox" value="" name="ContactInformation"></label>
+           <br>
+      </div>
+
+      <div id="PersonName" class="input-group">
         <label>Salutation:
           <select name="PreferredSalutationCode" class="form-control">
             <option>Salut</option>
@@ -70,37 +82,39 @@
           </label>
           <label>Middle Name:
                 <input type="text" name="MiddleName" class="form-control" placeholder="MiddleName">
-          </label><br/>
-</div>
-<div class="input-group" name="ChannelCode">
+          </label><br>
+      </div>
+
+      <div id="ChannelCode" class="input-group" title="Communication">
           Telephone:
-          <label><UseCode>Personal</UseCode> Mobile:
+          <label><!--UseCode-->Personal<!--/UseCode--> Mobile:
                 <input type="tel" name="mobileTel" class="form-control" placeholder="mobileTel"></label>
-          <label><UseCode>Personal</UseCode> Home:
+          <label><!--UseCode-->Personal<!--UseCode--> Home:
                 <input type="tel" name="homeTel" class="form-control" placeholder="homeTel"></label>
-          <label><UseCode>Business</UseCode>:
-                <input type="tel" name="officeTel" class="form-control" placeholder="officeTel"></label><br/>
+          <label><!--UseCode-->Business<!--UseCode-->:
+                <input type="tel" name="officeTel" class="form-control" placeholder="officeTel"></label><br>
           Social:
           <label>Email:
                 <input type="email" name="email" class="form-control" placeholder="email"></label>
           <label>Links:
-                <input type="url" name="myLinks" class="form-control" size="50" placeholder="myLinks"></label><br/>
+                <input type="url" name="myLinks" class="form-control" size="50" placeholder="myLinks"></label><br>
+      </div>
 
+      <div id="MailingCountryCode" class="input-group" title="Communication">
           <!--get country data from http://www.geonames.org/ -->
           <!-- Mailing: -->
-</div>
-<div class="input-group">
-          <label>Country:
-                 <select name="state" class="form-control">
+          <label>Country mailing:
+                 <select name="MailingCountryCode" class="form-control">
                     <option value="undef">-</option>
                     <option value="US">United States</option>
                     <option value="CA">Canada</option>
                     <option value="MX">Mexico</option>
                 </select></label>
           <label>PostalCode:
-                <input type="text" name="PostalCode" class="form-control" placeholder="PostalCode"></label><br/>
-</div>
-<div class="input-group">
+                <input type="text" name="PostalCode" class="form-control" placeholder="PostalCode"></label><br>
+      </div>
+
+      <div id="DomicileAddress" class="input-group" title="Communication">
           <label>AddressLine:
                 <input type="text" name="AddressLine" class="form-control" placeholder="AddressLine"></label>
           <!-- populate city based on postal code selection selection-->
@@ -118,11 +132,11 @@
       </div>
       <!--/CandidatePerson-->
 
-      <br/>
-      <div class="input-group">
-      <CandidateProfile>
+      <br>
+      <!-- <CandidateProfile> --> CandidateProfile
+      <div class="input-group" title="PersonAvailability">
         <div class="well well-sm">Availability</div>
-         <PersonAvailability>
+         <!--<PersonAvailability>-->
            <label>NoticePeriodMeasure:
              <select name="NoticePeriodMeasure" class="form-control">
                <option value="1">1</option>
@@ -139,9 +153,9 @@
                <option value="year">year</option>
              </select>
            </label>
-         </PersonAvailability>
-      </div>
-<br/>
+
+      </div><!--</PersonAvailability>-->
+<br>
       <div class="input-group">
         <div class="well well-sm">Objective</div>
           <label>Objective Title:
@@ -149,42 +163,57 @@
           <label>Objective Description:
                 <input type="text" name="objectiveDescription" placeholder="objectiveDescription" class="form-control"></label>
         <label>Display:
-          <input type="checkbox" value="" name="displayObjective"></label><br/>
+          <input type="checkbox" value="" name="displayObjective"></label><br>
       </div>
 
 
       <div class="input-group">
-        <div class="well well-sm">CandidateEmployerPreferences
-        </div>
-         <CandidateEmployerPreferences>
+        <div class="well well-sm">CandidateEmployerPreferences</div>
+
+         <!-- <CandidateEmployerPreferences> -->
            <label>CandidateEmployerPreferences:
-             <select name="IndustryCode" class="form-control">
+             <select id="CandidateEmployerPreferences" name="IndustryCode" class="form-control">
                <option value="undef">None</option>
                <option value="FinancialServices">Financial Services</option>
                <option value="Brokerage">Brokerage</option>
              </select>
            </label>
-         </CandidateEmployerPreferences>
-         <CandidatePositionPreferences>
+				 <!-- </CandidateEmployerPreferences> -->
+
+         <!-- <CandidatePositionPreferences> -->
            <label>Candidate Position Preferences:
-             <select name="PositionTitle" class="form-control">
+             <select id="CandidatePositionPreferences" name="PositionTitle" class="form-control">
                <option value="undef">None</option>
                <option value="FinancialAnalyst">Financial Analyst</option>
                <option value="FinancialPlanner">Financial Planner</option>
                <option value="Broker">Broker</option>
              </select>
-           </label><br/>
-         </CandidatePositionPreferences>
+           </label><br>
+
+         <!-- <RelocationConsidered> -->
+           <label>Relocation Considered:
+             <select id="RelocationConsidered" name="RelocationConsideredIndicator" class="form-control">
+               <option value="no">No</option>
+               <option value="yes">Yes</option>
+             </select>
+           </label><br>
+
+           <label>Describe possible relocations:
+           <input type="text" name="Description" class="form-control"  placeholder="Will consider positions in ..." aria-label="Relocation description"></label>
+         <!-- <RelocationConsidered> -->
+           
+         <!-- </CandidatePositionPreferences> -->
       </div>
-      <div class="input-group">
-             <OfferedRemunerationPackage>
-               <RemunerationRange>
-                 <RemunerationMinimumAmount currencyID="USD">
+      <div class="input-group" title="<OfferedRemunerationPackage>">
+         <!-- <OfferedRemunerationPackage> -->
+               <!-- <RemunerationRange> -->               
+                 <!--<RemunerationMinimumAmount currencyID="USD">-->
                    <label>Remuneration minimum:
                    <span class="input-group-addon">$</span>
                    <input type="text" name="RemunerationMinimumAmount" class="form-control"  placeholder="RemunerationMinimumAmount" aria-label="Amount (to the nearest dollar)"></label>
-                 </RemunerationMinimumAmount>
-                 <RemunerationRateIntervalCode>
+                 <!-- </RemunerationMinimumAmount> -->
+
+                 <!-- <RemunerationRateIntervalCode> -->
                  <label>RemunerationRateInterval
                    <select name="RemunerationRateIntervalCode" class="form-control">
                     <option value="undef">None</option>
@@ -194,32 +223,11 @@
                     <option value="Year">Year</option>
                    </select>
                  </label>
-                 </RemunerationRateIntervalCode>
-               </RemunerationRange>
-             </OfferedRemunerationPackage>
+                 <!-- </RemunerationRateIntervalCode> -->
+               <!-- </RemunerationRange> -->               
+             <!-- </OfferedRemunerationPackage> -->
       </div>
-
-         <code>
-         <pre>
-<CandidatePositionPreferences>
-  <PositionTitle>Financial Analyst</PositionTitle>
-  <PositionTitle>Financial Planner</PositionTitle>
-  <PositionTitle>Broker</PositionTitle>
-  <OfferedRemunerationPackage>
-    <RemunerationRange>
-      <RemunerationMinimumAmount currencyID="USD">95000</RemunerationMinimumAmount>
-      <RemunerationRateIntervalCode>Year</RemunerationRateIntervalCode>
-      </RemunerationRange>
-  </OfferedRemunerationPackage>
-  <RelocationConsidered>
-    <RelocationConsideredIndicator>true</RelocationConsideredIndicator>
-      <oa:Description>Will consider positions in the greater Chicago metropolitan area and in the Northeast United States.</oa:Description>
-   </RelocationConsidered>
-</CandidatePositionPreferences>
-       </pre>
-     </code>
-
-      <br/>
+      <br>
       <div class="input-group">
         <!-- Could also be called Experience or Work History -->
         <div class="well well-sm">Employment History</div>
@@ -228,13 +236,13 @@
           <label>End Date:
                 <input type="text" name="endDate" placeholder="endDate" class="form-control"></label>
           <label>Organization Name:
-                <input type="text" name="organizationName" placeholder="organizaionName" class="form-control"></label><br/>
+                <input type="text" name="organizationName" placeholder="organizaionName" class="form-control"></label><br>
           <label>Job Title:
                 <input type="text" name="jobTitle" class="form-control" placeholder="jobTitle"></label>
           <label>Job Description:
                <textarea name="jobDescription" class="form-control" rows="3" cols="50" placeholder="jobDescription"></textarea></label>
-      </div>\
-      <br/>
+      </div>
+      <br>
       <div class="input-group">
         <div class="well well-sm">Skills</div>
           <label>Category:
@@ -248,14 +256,14 @@
           <label>Organization Name:
                 <input type="text" name="organizationName" class="form-control" placeholder="organizationName"></label>
           <label>Skill Title:
-                <input type="text" name="skillTitle" class="form-control" placeholder="skillTitle"></label><br/>
+                <input type="text" name="skillTitle" class="form-control" placeholder="skillTitle"></label><br>
           <label>Skill Description:
                <textarea name="skillDescription" class="form-control" rows="3" cols="50" placeholder="skillDescription"></textarea></label>
           <label>Tags:
                <textarea name="skillTags" class="form-control" rows="3" cols="50" placeholder="skillTags"></textarea></label>
-               <br/>
+               <br>
       </div>
-      <br/>
+      <br>
       <div class="input-group">
         <div class="well well-sm">Education and Training</div>
           <label>Organization Name:
@@ -267,17 +275,18 @@
           <label>Completion Date
                 <input type="text" name="completionDateEdu" class="form-control" placeholder="completionDateEdu"></label>
       </div>
-      <br/>
+      <br>
       <div class="input-group">
         <div class="well well-sm">Summary of Qualifications</div>
           <label>Bulleted List:
-               <textarea name="summaryQualifications" class="form-control" rows="3" cols="50" placeholder="summaryQualifications"></textarea></label><br/>
+               <textarea name="summaryQualifications" class="form-control" rows="3" cols="50" placeholder="summaryQualifications"></textarea></label><br>
       </div>
-    </CandidateProfile>
-      <br/>
+
+    <!-- </CandidateProfile> -->
+      
     </form>
     </div><!--/container-->
-
+<br>
     <!--##############################################################################-->
     <!--HTML Template view-->
     <div id="htmlTemplateView" class="container">
