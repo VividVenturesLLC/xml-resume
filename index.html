@@ -26,19 +26,23 @@
 
     <div class="container">
       <ul class="nav nav-tabs">
-        <li role="presentation" class="active"><a href="#formView">Form</a></li>
-        <li role="presentation"><a href="#htmlTemplateView">HTML</a></li>
-        <li role="presentation"><a href="#textTemplateView">TEXT</a></li>
-        <li role="presentation"><a href="#reportView">REPORT</a></li>
-        <li role="presentation"><a href="#jsonView">JSON</a></li>
-        <li role="presentation"><a href="#xmlView">XML</a></li>
-        <li role="presentation"><a href="#docxView">DOCX</a></li>
-        <li role="presentation"><a href="#pdfView">PDF</a></li>
-        <li role="presentation"><a href="#searchView">Search</a></li>
+        <li role="presentation" class="active"><a href="#formView" aria-controls="formView" role="tab" data-toggle="tab">Form</a></li>
+        <li role="presentation"><a href="#htmlTemplateView" aria-controls="htmlTemplateView" role="tab" data-toggle="tab">HTML</a></li>
+        <li role="presentation"><a href="#textTemplateView" aria-controls="textTemplateView" role="tab" data-toggle="tab">TEXT</a></li>
+        <li role="presentation"><a href="#reportView" aria-controls="reportView" role="tab" data-toggle="tab">REPORT</a></li>
+        <li role="presentation"><a href="#jsonView" aria-controls="jsonView" role="tab" data-toggle="tab">JSON</a></li>
+        <li role="presentation"><a href="#xmlView" aria-controls="xmlView" role="tab" data-toggle="tab">XML</a></li>
+        <li role="presentation"><a href="#docxView" aria-controls="docxView" role="tab" data-toggle="tab">DOCX</a></li>
+        <li role="presentation"><a href="#pdfView" aria-controls="pdfView" role="tab" data-toggle="tab">PDF</a></li>
+        <li role="presentation"><a href="#searchView" aria-controls="searchView" role="tab" data-toggle="tab">Search</a></li>
       </ul>
     </div> <!--/container-->
 
+
+
+
     <div id="formLogin" class="container" title="formLogin">
+    
      <form id="CandidateLogin">
       <div class="input-group">
           <div class="well well-sm"><h4>Login</h4></div>
@@ -54,8 +58,12 @@
      </form>
     </div><!--/formLogin-->
     <br>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+
     <!--CandidatePerson-->
-    <div id="formView" class="container" title="CandidatePerson">
+    <div  role="tabpanel" class="tab-pane" id="formView" title="CandidatePerson">
      <form id="CandidatePerson">
       <div class="input-group">
         <div class="well well-sm">Make public</div>
@@ -289,7 +297,7 @@
 <br>
     <!--##############################################################################-->
     <!--HTML Template view-->
-    <div id="htmlTemplateView" class="container">
+    <div role="tabpanel" class="tab-pane" id="htmlTemplateView" >
     HTML Template view
     </div><!--/container-->
     <!--##############################################################################-->
@@ -297,7 +305,7 @@
 
     <!--##############################################################################-->
     <!--TEXT Template view-->
-    <div id="textTemplateView" class="container">
+    <div role="tabpanel" class="tab-pane" id="textTemplateView" >
     TEXT Template view
     </div><!--/container-->
     <!--##############################################################################-->
@@ -305,7 +313,7 @@
 
     <!--##############################################################################-->
     <!--REPORT view-->
-    <div id="reportView" class="container">
+    <div role="tabpanel" class="tab-pane" id="reportView" >
     REPORT view
     </div><!--/container-->
     <!--##############################################################################-->
@@ -313,7 +321,7 @@
 
     <!--##############################################################################-->
     <!--JSON view-->
-    <div id="jsonView" class="container">
+    <div role="tabpanel" class="tab-pane" id="jsonView" >
     JSON view
     </div><!--/container-->
     <!--##############################################################################-->
@@ -321,21 +329,21 @@
 
     <!--##############################################################################-->
     <!--XML view-->
-    <div id="xmlView" class="container">
+    <div role="tabpanel" class="tab-pane" id="xmlView" >
     XML view
     </div><!--/container-->
     <!--##############################################################################-->
 
     <!--##############################################################################-->
     <!--DOCX view-->
-    <div id="docxView" class="container">
+    <div role="tabpanel" class="tab-pane" id="docxView" >
     DOCX view
     </div><!--/container-->
     <!--##############################################################################-->
 
     <!--##############################################################################-->
     <!--PDF view-->
-    <div id="pdfView" class="container">
+    <div role="tabpanel" class="tab-pane" id="pdfView" >
     PDF view
     </div><!--/container-->
     <!--##############################################################################-->
@@ -343,10 +351,12 @@
 
     <!--##############################################################################-->
     <!--Search view-->
-    <div id="searchView" class="container">
+    <div  role="tabpanel" class="tab-pane" id="searchView">
     Search view
     </div><!--/container-->
     <!--##############################################################################-->
+
+    </div><!--End Tab panes-->
 
    </body>
 </html>
