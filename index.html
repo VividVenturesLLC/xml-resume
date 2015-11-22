@@ -19,12 +19,19 @@
 
 <!-- ======== ======== ======== ======== ======== ======== ======== ======== -->
    <body>
-    <dl class="dl-horizontal">
-      <dt>XML-Resume</dt>
-      <dd>by Vivid Ventures LLC</dd>
-    </dl>
+    <div id="titlebar">
+	    <dl class="dl-horizontal container">
+	      <dt>XML-Resume</dt>
+	      <dd>by Vivid Ventures LLC
+	          <div class="btn-group btn-group-xs" role="group" aria-label="signin" style="display: inline; float: right;">
+	            <button class="btn btn-primary" type="submit">Sign in</button>
+	            <button class="btn btn-default" type="submit">New Account</button>
+	          </div>
+	      </dd>
+	    </dl>
+    </div><!--/titlebar-->
 
-    <div id="formLogin" class="container" title="formLogin">
+    <div id="formLogin" class="container" title="formLogin" hidden>
     
      <form id="CandidateLogin">
       <div class="input-group">
@@ -43,7 +50,9 @@
 
 
     <div class="container">
-      <ul class="nav nav-tabs">
+      <!-- Nav tabs -->
+      <!-- http://getbootstrap.com/javascript/#markup -->
+      <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active"><a href="#formView" aria-controls="formView" role="tab" data-toggle="tab">Form</a></li>
         <li role="presentation"><a href="#htmlTemplateView" aria-controls="htmlTemplateView" role="tab" data-toggle="tab">HTML</a></li>
         <li role="presentation"><a href="#textTemplateView" aria-controls="textTemplateView" role="tab" data-toggle="tab">TEXT</a></li>
@@ -59,10 +68,11 @@
     <br>
 
   <!-- Tab panes -->
-  <div class="tab-content">
+  <!-- http://getbootstrap.com/javascript/#markup -->
+  <div class="tab-content container">
 
     <!--CandidatePerson-->
-    <div  role="tabpanel" class="tab-pane" id="formView" title="CandidatePerson">
+    <div  role="tabpanel" class="tab-pane active" id="formView" title="CandidatePerson">
      <form id="CandidatePerson">
       <div class="input-group">
         <div class="well well-sm">Make public</div>
@@ -294,66 +304,66 @@
     </form>
     </div><!--/container-->
 <br>
-    <!--##############################################################################-->
+    <!--###############################################################-->
     <!--HTML Template view-->
     <div role="tabpanel" class="tab-pane" id="htmlTemplateView" >
     HTML Template view
     </div><!--/container-->
-    <!--##############################################################################-->
+    <!--###############################################################-->
 
 
-    <!--##############################################################################-->
+    <!--###############################################################-->
     <!--TEXT Template view-->
     <div role="tabpanel" class="tab-pane" id="textTemplateView" >
     TEXT Template view
     </div><!--/container-->
-    <!--##############################################################################-->
+    <!--###############################################################-->
 
 
-    <!--##############################################################################-->
+    <!--###############################################################-->
     <!--REPORT view-->
     <div role="tabpanel" class="tab-pane" id="reportView" >
     REPORT view
     </div><!--/container-->
-    <!--##############################################################################-->
+    <!--###############################################################-->
 
 
-    <!--##############################################################################-->
+    <!--###############################################################-->
     <!--JSON view-->
     <div role="tabpanel" class="tab-pane" id="jsonView" >
     JSON view
     </div><!--/container-->
-    <!--##############################################################################-->
+    <!--###############################################################-->
 
 
-    <!--##############################################################################-->
+    <!--###############################################################-->
     <!--XML view-->
     <div role="tabpanel" class="tab-pane" id="xmlView" >
     XML view
     </div><!--/container-->
-    <!--##############################################################################-->
+    <!--###############################################################-->
 
-    <!--##############################################################################-->
+    <!--###############################################################-->
     <!--DOCX view-->
     <div role="tabpanel" class="tab-pane" id="docxView" >
     DOCX view
     </div><!--/container-->
-    <!--##############################################################################-->
+    <!--###############################################################-->
 
-    <!--##############################################################################-->
+    <!--###############################################################-->
     <!--PDF view-->
     <div role="tabpanel" class="tab-pane" id="pdfView" >
     PDF view
     </div><!--/container-->
-    <!--##############################################################################-->
+    <!--###############################################################-->
 
 
-    <!--##############################################################################-->
+    <!--###############################################################-->
     <!--Search view-->
     <div  role="tabpanel" class="tab-pane" id="searchView">
     Search view
     </div><!--/container-->
-    <!--##############################################################################-->
+    <!--###############################################################-->
 
     </div><!--End Tab panes-->
 
