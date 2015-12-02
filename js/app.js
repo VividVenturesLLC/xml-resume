@@ -1,4 +1,4 @@
-/* Project:  xml-resume 
+/* Project:  xml-resume
    Filename: app.js
    Version:  V0.0.1-pre-alpha
    By:       Joe Devlin
@@ -12,15 +12,16 @@
 */
 
 angular.module('resumeApp', [])
-   .controller('titlebar', function ($scope) {
+   .controller('titlebarCtrl', function ($scope) {
        if (angular.version.full != "") {
-           //document.getElementById("AngularJS-small").style.visibility="visible" ;
            $scope.showlogo=true;
            console.log("In resumeApp angular.version.full: " + angular.version.full);
-       }   	
+       }
    	})
    .controller('candidatePersonCtrl', function ($scope) {
-      // Manage input from the candidatePerson form
+      // Link model to the candidatePerson form
+      // access the model file in ../model/candidatePerson.json
+      //$scope.candidatePerson = {};
       $scope.personname = {
           preferredsalutationcode : "",
       };

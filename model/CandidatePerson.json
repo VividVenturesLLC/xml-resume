@@ -1,0 +1,129 @@
+{
+  "about": "The data definition should as closely as possible match the [hr-xml](http://www.hropenstandards.org/) specification.  This JSON was edited with [json editor online](http://jsoneditoronline.org/), then copied and saved locally with a text editor.  ",
+  "ContactInformationPublic": true,
+  "personName": {
+    "preferredsSalutationcCode": [
+      "Ms",
+      "Mrs",
+      "Mr",
+      "Dr"
+    ],
+    "GivenName": "",
+    "FamilyName": "",
+    "MiddleName": ""
+  },
+  "ChannelCode": {
+    "tel": {
+      "mobileTel": "",
+      "homeTel": "",
+      "officeTel": ""
+    },
+    "email": "",
+    "url": ""
+  },
+  "Communication": {
+    "MailingCountryCode": [
+      "",
+      "US",
+      "CA",
+      "MX"
+    ],
+    "PostalCode": "",
+    "DomicileAddress": "",
+    "CityName": "",
+    "CountrySubDivisionCode": ""
+  },
+  "CandidateProfile": {
+    "PersonAvailability": {
+      "NoticePeriodMeasure": [
+        "not",
+        1,
+        2,
+        3,
+        4
+      ],
+      "unitCode": [
+        "week",
+        "month",
+        "year"
+      ]
+    },
+    "Objective": {
+      "objectiveTitle": "",
+      "objectiveDescription": "",
+      "displayObjective": true
+    },
+    "CandidateEmployerPreferences": {
+      "IndustryCode": [
+        "Industry",
+        "FinancialServices",
+        "Brokerage",
+        "etc"
+      ]
+    },
+    "CandidatePositionPreferences": {
+      "PositionTitle": [
+        "Title",
+        "FinancialAnalyst",
+        "FinancialPlanner",
+        "Broker"
+      ]
+    },
+    "RelocationConsidered": {
+      "RelocationConsideredIndicator": [
+        "no",
+        "yes"
+      ],
+      "Description": ""
+    },
+    "OfferedRemunerationPackage": {
+      "RemunerationMinimumAmount": "",
+      "RemunerationRateIntervalCode": [
+        "Interval",
+        "Hour",
+        "Week",
+        "Month",
+        "Year"
+      ]
+    },
+    "employmentHistory": {
+      "eventID": {
+        "0": {
+          "startDate": "",
+          "endDate": "",
+          "organizationName": "",
+          "jobTitle": "",
+          "jobDescription": ""
+        }
+      }
+    },
+    "skills": {
+      "skillID": {
+        "0": {
+          "skillCategory": [
+            "management",
+            "equipment",
+            "manual",
+            "interpersonal",
+            "procedural"
+          ],
+          "organizationName": "",
+          "skillTitle": "",
+          "skillDescription": "",
+          "skillTags": ""
+        }
+      }
+    },
+    "educationAndTraining": {
+      "eduID": {
+        "0": {
+          "organizationNameEdu": "",
+          "degree": "",
+          "certification": "",
+          "completionDateEdu": ""
+        }
+      }
+    },
+    "summaryQualifications": ""
+  }
+}

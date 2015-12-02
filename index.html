@@ -19,7 +19,7 @@
 
 <!-- ======== ======== ======== ======== ======== ======== ======== ======== -->
    <body ng-app="resumeApp">
-    <div id="titlebar" ng-controller="titlebar">
+    <div id="titlebar" ng-controller="titlebarCtrl">
 	    <dl class="dl-horizontal container">
 	      <dt>XML-Resume</dt>
 	      <dd>by Vivid Ventures LLC
@@ -33,7 +33,7 @@
     </div><!--/titlebar-->
 
     <div id="formLogin" class="container" title="formLogin" hidden>
-    
+
      <form id="CandidateLogin">
       <div class="input-group">
           <div class="well well-sm">Login</div>
@@ -43,7 +43,7 @@
             <button class="btn btn-primary" type="submit">Sign in</button>
             <button class="btn btn-default" type="submit">New Account</button>
           </div>
-        <span class="label label-default">Logged in / Not logged in</span> 
+        <span class="label label-default">Logged in / Not logged in</span>
         <span class="label label-default">Paid / Pay Now</span>
       </div>
      </form>
@@ -80,7 +80,7 @@
       <div class="input-group">
         <div class="well well-sm">Make public</div>
           <label>Contact Information:
-           <input type="checkbox" value="" name="ContactInformation"></label>
+           <input type="checkbox" value="" name="ContactInformationPublic"></label>
            <br>
       </div>
 
@@ -221,12 +221,12 @@
            <label>Describe possible relocations:
            <input type="text" name="Description" class="form-control"  placeholder="Will consider positions in ..." aria-label="Relocation description"></label>
          <!-- <RelocationConsidered> -->
-           
+
          <!-- </CandidatePositionPreferences> -->
       </div>
       <div class="input-group" title="<OfferedRemunerationPackage>">
          <!-- <OfferedRemunerationPackage> -->
-               <!-- <RemunerationRange> -->               
+               <!-- <RemunerationRange> -->
                  <!--<RemunerationMinimumAmount currencyID="USD">-->
                    <label>Remuneration minimum:
                    <span class="input-group-addon">$</span>
@@ -244,28 +244,31 @@
                    </select>
                  </label>
                  <!-- </RemunerationRateIntervalCode> -->
-               <!-- </RemunerationRange> -->               
+               <!-- </RemunerationRange> -->
              <!-- </OfferedRemunerationPackage> -->
       </div>
       <br>
-      <div class="input-group">
+      <div id="employmentHistory"class="input-group" title="employmentHistory">
         <!-- Could also be called Experience or Work History -->
         <div class="well well-sm">Employment History</div>
-          <label>Start Date:
+          <div id="eventID">
+            <label>Start Date:
                 <input type="text" name="startDate"  placeholder="startDate" class="form-control"></label>
-          <label>End Date:
+            <label>End Date:
                 <input type="text" name="endDate" placeholder="endDate" class="form-control"></label>
-          <label>Organization Name:
+            <label>Organization Name:
                 <input type="text" name="organizationName" placeholder="organizaionName" class="form-control"></label><br>
-          <label>Job Title:
+            <label>Job Title:
                 <input type="text" name="jobTitle" class="form-control" placeholder="jobTitle"></label>
-          <label>Job Description:
+            <label>Job Description:
                <textarea name="jobDescription" class="form-control" rows="3" cols="50" placeholder="jobDescription"></textarea></label>
+          </div><!--/eventID-->
       </div>
       <br>
-      <div class="input-group">
+      <div id="skills" class="input-group">
         <div class="well well-sm">Skills</div>
-          <label>Category:
+          <div id="skillID">
+            <label>Category:
                  <select name="skillCategory" class="form-control">
                     <option value="management">Management</option>
                     <option value="equipment">Equipment</option>
@@ -273,19 +276,21 @@
                     <option value="interpersonal">Interpersonal</option>
                     <option value="procedural">Procedural</option>
                 </select></label>
-          <label>Organization Name:
+            <label>Organization Name:
                 <input type="text" name="organizationName" class="form-control" placeholder="organizationName"></label>
-          <label>Skill Title:
+            <label>Skill Title:
                 <input type="text" name="skillTitle" class="form-control" placeholder="skillTitle"></label><br>
-          <label>Skill Description:
+            <label>Skill Description:
                <textarea name="skillDescription" class="form-control" rows="3" cols="50" placeholder="skillDescription"></textarea></label>
-          <label>Tags:
+            <label>Tags:
                <textarea name="skillTags" class="form-control" rows="3" cols="50" placeholder="skillTags"></textarea></label>
                <br>
+          </div><!-- / skillID-->
       </div>
       <br>
       <div class="input-group">
-        <div class="well well-sm">Education and Training</div>
+        <div id="educationAndTraining" class="well well-sm">Education and Training</div>
+          <div id="eduID">
           <label>Organization Name:
                 <input type="text" name="organizationNameEdu" class="form-control" placeholder="organizationNameEdu"></label>
           <label>Degree:
@@ -294,6 +299,8 @@
                 <input type="text" name="certification" class="form-control" placeholder="certification"></label>
           <label>Completion Date
                 <input type="text" name="completionDateEdu" class="form-control" placeholder="completionDateEdu"></label>
+          </div><!-- /eduID -->
+        </div><!-- /educationAndTraining -->
       </div>
       <br>
       <div class="input-group">
@@ -303,7 +310,7 @@
       </div>
 
     <!-- </CandidateProfile> -->
-      
+
     </form>
     </div><!--/container-->
     <!--###########################################################-->
@@ -338,6 +345,7 @@
     <!--JSON view-->
     <div role="tabpanel" class="tab-pane" id="jsonView" >
     JSON view
+    <pre ng-bind="myModelNamehHere | json"></pre>
     {{}}
     </div><!--/container-->
     <!--###########################################################-->
