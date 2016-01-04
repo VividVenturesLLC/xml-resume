@@ -2,21 +2,26 @@
  <html>
 
    <head>
-     <title>XML-Resume 0.01</title>
+     <title>XML-Resume V0.0.2-pre-alpha</title>
      <!-- Reference http://www.hropenstandards.org/  for data definition-->
      <meta charset="UTF-8">
      <!--For latest revision updates see https://developers.google.com/speed/libraries/  -->
-       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-     <!--For latest revision updates see http://www.bootstrapcdn.com/  -->
-       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-       <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
 
-     <!--Custom js and theme for this form page -->
+     <!--For latest revision updates see https://angular-ui.github.io  -->       
+       <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
+       
+     <!--For latest revision updates see http://netdna.bootstrapcdn.com/  -->       
+       <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+     <!-- Add colors to page -->
+       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/slate/bootstrap.min.css">
+
+     <!--Custom js and theme for this page -->
        <script src="js/app.js"></script>
-       <link href="theme/form_theme.css" rel="stylesheet">
+       <link href="theme/form_theme.css" rel="stylesheet"><!--debugging borders and background colors -->
    </head>
-
 <!-- ======== ======== ======== ======== ======== ======== ======== ======== -->
    <body ng-app="resumeApp">
     <div id="titlebar" ng-controller="titlebarCtrl">
@@ -49,10 +54,20 @@
      </form>
     </div><!--/formLogin-->
 
-
     <div class="container">
+      <div ng-controller="tabViewCtrl">
       <!-- Nav tabs -->
-      <!-- http://getbootstrap.com/javascript/#markup -->
+      <!-- http://angular-ui.github.io/bootstrap/ -->
+        <uib-tabset>
+          <uib-tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disable="tab.disabled">
+            {{tab.content}}
+          </uib-tab>
+        </uib-tabset>
+      </div><!--/ tabViewCtrl -->
+    </div> <!--/container-->
+    
+    <br>
+
       <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active"><a href="#formView" aria-controls="formView" role="tab" data-toggle="tab">Form</a></li>
         <li role="presentation"><a href="#htmlTemplateView" aria-controls="htmlTemplateView" role="tab" data-toggle="tab">HTML</a></li>
@@ -64,9 +79,9 @@
         <li role="presentation"><a href="#pdfView" aria-controls="pdfView" role="tab" data-toggle="tab">PDF</a></li>
         <li role="presentation"><a href="#searchView" aria-controls="searchView" role="tab" data-toggle="tab">Search</a></li>
       </ul>
-    </div> <!--/container-->
 
-    <br>
+
+
 
   <!-- Tab panes -->
   <!-- http://getbootstrap.com/javascript/#markup -->
