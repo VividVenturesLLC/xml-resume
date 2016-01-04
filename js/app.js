@@ -21,14 +21,13 @@ angular.module('resumeApp', ['ngAnimate', 'ui.bootstrap'])
     $scope.tabs = [
       { title:'Form', content:'formView' },
       { title:'HTML', content:'htmlTemplateView'},
-      { title:'Text', content:'textTemplateView'}
-      { title:'Report', content:'reportView'}
-      { title:'JSON', content:'jsonView'}
-      { title:'XML', content:'xmlView'}
-      { title:'DOCX', content:'docxView', disabled: true}
-      { title:'PDF', content:'pdfView', disabled: true}
+      { title:'Text', content:'textTemplateView'},
+      { title:'Report', content:'reportView'},
+      { title:'JSON', content:'jsonView'},
+      { title:'XML', content:'xmlView'},
+      { title:'DOCX', content:'docxView', disabled: true},
+      { title:'PDF', content:'pdfView', disabled: true},
       { title:'Search', content:'searchView', disabled: true}
-
     ];
 
   $scope.alertMe = function() {
