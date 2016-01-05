@@ -8,12 +8,14 @@
      <!--For latest revision updates see https://developers.google.com/speed/libraries/  -->
        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
-
+       
      <!--For latest revision updates see https://angular-ui.github.io  -->
        <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
 
-     <!--For latest revision updates see http://netdna.bootstrapcdn.com/  -->
+     <!--For latest revision updates see http://netdna.bootstrapcdn.com/ -->
+      <!-- below is redundant if using colored theme from bootswatch
        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+      -->
 
      <!-- Add colors to page -->
        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/slate/bootstrap.min.css">
@@ -21,6 +23,17 @@
      <!--Custom js and theme for this page -->
        <script src="js/app.js"></script>
        <link href="theme/form_theme.css" rel="stylesheet"><!--debugging borders and background colors -->
+     
+     <!-- Test Driven Development TDD w/ Jasmine -->
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-mocks.js"></script>
+       <link href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.4.1/jasmine.css" rel="stylesheet">
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.4.1/jasmine.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.4.1/jasmine-html.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.4.1/boot.js"></script>
+       <!--Test Specs-->
+       <script src="test/spec/spec-tab-nav.js"></script>
+       
+     
    </head>
 <!-- ======== ======== ======== ======== ======== ======== ======== ======== -->
    <body ng-app="resumeApp">
@@ -65,7 +78,7 @@
         </uib-tabset>
       </div><!--/ tabViewCtrl -->
     </div> <!--/container-->
-
+    <hr/>
    </body>
    
 </html>
