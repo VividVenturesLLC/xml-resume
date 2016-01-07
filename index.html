@@ -25,11 +25,13 @@
        <link href="theme/form_theme.css" rel="stylesheet"><!--debugging borders and background colors -->
      
      <!-- Test Driven Development TDD w/ Jasmine -->
-       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-mocks.js"></script>
        <link href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.4.1/jasmine.css" rel="stylesheet">
        <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.4.1/jasmine.js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.4.1/jasmine-html.js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.4.1/boot.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-mocks.js"></script><!-- -Must- be loaded after jasmine.js -->
+       <!-- http://stackoverflow.com/questions/13334749/testing-service-in-angular-returns-module-is-not-defined/18075124#18075124 -->
+
        <!--Test Specs-->
        <script src="test/spec/spec-tab-nav.js"></script>
        

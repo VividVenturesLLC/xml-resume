@@ -13,7 +13,7 @@
 angular.module('resumeApp', ['ngAnimate', 'ui.bootstrap'])
    .controller('titlebarCtrl', function ($scope) {
        if (angular.version.full != "") {
-           $scope.showlogo=true;
+           $scope.showlogo=true;// set 'true' for debugging, 'false' for normal use
            console.log("In resumeApp angular.version.full: " + angular.version.full);
        }
    	})
