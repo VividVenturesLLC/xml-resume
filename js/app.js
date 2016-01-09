@@ -1,6 +1,6 @@
 /* Project:  xml-resume
    Filename: app.js
-   Version:  V0.0.1-pre-alpha
+   Version:  V0.0.2-pre-alpha
    By:       Joe Devlin
    Company:  Vivid Ventures LLC
 */
