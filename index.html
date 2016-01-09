@@ -6,7 +6,8 @@
      <!-- Reference http://www.hropenstandards.org/  for data definition-->
      <meta charset="UTF-8">
      <!--For latest revision updates see https://developers.google.com/speed/libraries/  -->
-       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
      <!--For latest revision updates see http://www.bootstrapcdn.com/  -->
        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -163,7 +164,14 @@
     </div><!--/container-->
     <!--###########################################################-->
 
-    </div><!--End Tab panes-->
+
+    <!-- Expecting the partial to be loaded here?-->
+    <div class="ng-view"></div>
+
+
+    </div><!--/container-->
+    <!-- /Tab panes-->
+    
     <hr><br>
    </body>
 </html>

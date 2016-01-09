@@ -11,7 +11,7 @@
      bootstrap
 */
 
-angular.module('resumeApp', [])
+var resumeApp = angular.module('resumeApp', ['ngRoute'])
    .controller('titlebarCtrl', function ($scope) {
        if (angular.version.full != "") {
            $scope.showlogo=true;
@@ -26,3 +26,22 @@ angular.module('resumeApp', [])
           preferredsalutationcode : "",
       };
    });
+
+
+
+   
+resumeApp
+  .config(['$routeProvider', function($routeProvider) {
+    $routeProvider.
+      when('/formView', {
+        templateUrl: 'views/form_view.html',
+        controller: 'formController'
+      }).
+      when('/htmlTemplateView', {
+        templateUrl: 'views/templateChronological.html',
+        controller: 'htmlController'
+      }).
+      otherwise({
+        redirectTo: 'index.html'
+      });
+  }]);
