@@ -22,9 +22,11 @@ var resumeApp = angular.module('resumeApp', ['ngRoute'])
       // Link model to the candidatePerson form
       // access the model file in ../model/candidatePerson.json
       //$scope.candidatePerson = {};
+      /*
       $scope.personname = {
           preferredsalutationcode : "",
       };
+      */
    });
 
 
@@ -40,6 +42,10 @@ resumeApp
       when('/htmlTemplateView', {
         templateUrl: 'views/templateChronological.html',
         controller: 'htmlController'
+      }).
+      when('/jsonView', {
+        templateUrl: 'model/CandidatePerson.json',
+        controller: 'modelController'
       }).
       otherwise({
         redirectTo: 'index.html'

@@ -2,7 +2,7 @@
  <html>
 
    <head>
-     <title>XML-Resume 0.01</title>
+     <title>XML-Resume v0.0.2</title>
      <!-- Reference http://www.hropenstandards.org/  for data definition-->
      <meta charset="UTF-8">
      <!--For latest revision updates see https://developers.google.com/speed/libraries/  -->
@@ -38,8 +38,8 @@
    </head>
 
 <!-- ======== ======== ======== ======== ======== ======== ======== ======== -->
-   <body ng-app="resumeApp">
-    <div id="titlebar" ng-controller="titlebarCtrl">
+   <body data-ng-app="resumeApp">
+    <div id="titlebar" data-ng-controller="titlebarCtrl">
 	    <dl class="dl-horizontal container">
 	      <dt>XML-Resume</dt>
 	      <dd>by Vivid Ventures LLC
@@ -48,8 +48,8 @@
 	            <button class="btn btn-default" type="submit">New Account</button>
 	          </div>
 	      </dd>
-      <img id="AngularJS-small" src="https://angularjs.org/img/AngularJS-small.png" ng-show="showlogo"></img>
 	    </dl>
+      <img id="AngularJS-small" alt="AngularJS-small" src="https://angularjs.org/img/AngularJS-small.png" data-ng-show="showlogo" style="float: right">
     </div><!--/titlebar-->
 
     <div id="formLogin" class="container" title="formLogin" hidden>
@@ -128,9 +128,8 @@
     <!--###########################################################-->
     <!--JSON view-->
     <div role="tabpanel" class="tab-pane" id="jsonView" >
-    JSON view w/ ng-bind here ==>>
-    <pre ng-bind="myModelNamehHere | json"></pre>
-    {{}}
+    JSON view w/ data-ng-bind here ==>>
+    <pre data-ng-bind="myModelNamehHere | json"></pre>
     </div><!--/container-->
     <!--###########################################################-->
 
@@ -166,7 +165,7 @@
 
 
     <!-- Expecting the partial to be loaded here?-->
-    <div class="ng-view"></div>
+    <div class="data-ng-view"></div>
 
 
     </div><!--/container-->

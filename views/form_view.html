@@ -1,46 +1,61 @@
-     <form id="CandidatePerson" ng-controller="candidatePersonCtrl">
-      <div class="input-group">
-        <div class="well well-sm">Make public</div>
-          <label>Contact Information:
-           <input type="checkbox" value="" name="ContactInformationPublic"></label>
-           <br>
-      </div>
+     <form id="CandidatePerson" data-ng-controller="candidatePersonCtrl">
+     
+     <pre><!-- Debug only to see if ng-model is binding -->
+        {{CandidatePerson.ContactInformationPublic}}
+        {{CandidatePerson.PreferredSalutationCode}}
+     </pre>
 
-    <div><!-- CandidatePerson -->CandidatePerson
+     <div class="input-group">
+        <div class="well well-sm">Make public
+        </div>
+          <label>Make my contact information and resume public:</label>
+           <input type="checkbox" value="" name="ContactInformationPublic" data-ng-model="CandidatePerson.ContactInformationPublic"/>
+     </div>
+      
+    <div><!--spacer--></div>
+
+      
+    <div><!--spacer--></div>
+
+    <div><!-- CandidatePerson --><label>CandidatePerson</label>
       <div id="PersonName" class="input-group">
         <label>Salutation:
-          <select name="PreferredSalutationCode" class="form-control" ng-model="personname.preferredsalutationcode">
+          <select name="PreferredSalutationCode" class="form-control" data-ng-model="CandidatePerson.PreferredSalutationCode">
             <option>Salut</option>
             <option value="Ms">Ms.</option>
             <option value="Mrs">Mrs.</option>
             <option value="Mr">Mr.</option>
             <option value="Dr">Dr.</option>
           </select>
-        </label>
+         </label> 
+
           <label>First Name:
-               <input type="text" name="GivenName" class="form-control" placeholder="GivenName">
-          </label>
+               <input type="text" name="GivenName" class="form-control" placeholder="GivenName"/></label>
+          
           <label>Last Name:
-                <input type="text" name="FamilyName" class="form-control" placeholder="FamilyName">
-          </label>
+                <input type="text" name="FamilyName" class="form-control" placeholder="FamilyName"/></label>
+          
           <label>Middle Name:
-                <input type="text" name="MiddleName" class="form-control" placeholder="MiddleName">
-          </label><br>
-      </div>
+                <input type="text" name="MiddleName" class="form-control" placeholder="MiddleName"/></label>
+      </div><!-- /PersonName -->
+
+      <div><!--spacer--></div>
 
       <div id="ChannelCode" class="input-group" title="Communication">
           Telephone:
+         <div><!--spacer--></div>
           <label><!--UseCode-->Personal<!--/UseCode--> Mobile:
-                <input type="tel" name="mobileTel" class="form-control" placeholder="mobileTel"></label>
+                <input type="tel" name="mobileTel" class="form-control" placeholder="mobileTel"/></label>
           <label><!--UseCode-->Personal<!--UseCode--> Home:
-                <input type="tel" name="homeTel" class="form-control" placeholder="homeTel"></label>
+                <input type="tel" name="homeTel" class="form-control" placeholder="homeTel"/></label>
           <label><!--UseCode-->Business<!--UseCode-->:
-                <input type="tel" name="officeTel" class="form-control" placeholder="officeTel"></label><br>
+                <input type="tel" name="officeTel" class="form-control" placeholder="officeTel"/></label>
+         <div><!--spacer--></div>
           Social:
           <label>Email:
-                <input type="email" name="email" class="form-control" placeholder="email"></label>
+                <input type="email" name="email" class="form-control" placeholder="email"/></label>
           <label>Links:
-                <input type="url" name="myLinks" class="form-control" size="50" placeholder="myLinks"></label><br>
+                <input type="url" name="myLinks" class="form-control" size="50" placeholder="myLinks"/></label>
       </div>
 
       <div id="MailingCountryCode" class="input-group" title="Communication">
@@ -52,17 +67,18 @@
                     <option value="US">United States</option>
                     <option value="CA">Canada</option>
                     <option value="MX">Mexico</option>
-                </select></label>
+                </select>
+          </label>
           <label>PostalCode:
-                <input type="text" name="PostalCode" class="form-control" placeholder="PostalCode"></label><br>
+                <input type="text" name="PostalCode" class="form-control" placeholder="PostalCode"/></label>
       </div>
 
       <div id="DomicileAddress" class="input-group" title="Communication">
           <label>AddressLine:
-                <input type="text" name="AddressLine" class="form-control" placeholder="AddressLine"></label>
+                <input type="text" name="AddressLine" class="form-control" placeholder="AddressLine"/></label>
           <!-- populate city based on postal code selection selection-->
           <label>CityName:
-                <input type="text" name="CityName" class="form-control" placeholder="CityName"></label>
+                <input type="text" name="CityName" class="form-control" placeholder="CityName"/></label>
           <!-- populate state option based on country (and postal code) selection-->
           <label>CountrySubDivisionCode:
                  <select name="CountrySubDivisionCode" class="form-control">
@@ -71,11 +87,13 @@
                     <option value="AL">AL</option>
                     <option value="MI">MI</option>
                     <option value="WY">WY</option>
-                </select></label>
+                </select>
+          </label>
       </div>
     </div><!--/CandidatePerson-->
 
-      <br>
+      <div><!--spacer--></div>
+
       <!-- <CandidateProfile> --> CandidateProfile
       <div class="input-group" title="PersonAvailability">
         <div class="well well-sm">Availability</div>
@@ -88,7 +106,7 @@
                <option value="4">4</option>
                <option value="not">Not Available</option>
              </select>
-           </label>
+           </label>           
            <label>unitCode:
              <select name="unitCode" class="form-control">
                <option value="week">week</option>
@@ -98,16 +116,20 @@
            </label>
 
       </div><!--</PersonAvailability>-->
-<br>
+
+      <div><!--spacer--></div>
+
       <div class="input-group">
         <div class="well well-sm">Objective</div>
           <label>Objective Title:
-                <input type="text" name="objectiveTitle" class="form-control"  placeholder="objectiveTitle"></label>
+                <input type="text" name="objectiveTitle" class="form-control"  placeholder="objectiveTitle"/></label>
           <label>Objective Description:
-                <input type="text" name="objectiveDescription" placeholder="objectiveDescription" class="form-control"></label>
+                <input type="text" name="objectiveDescription" placeholder="objectiveDescription" class="form-control"/></label>
         <label>Display:
-          <input type="checkbox" value="" name="displayObjective"></label><br>
+          <input type="checkbox" value="" name="displayObjective"/></label>
       </div>
+
+     <div><!--spacer--></div>
 
 
       <div class="input-group">
@@ -120,7 +142,7 @@
                <option value="FinancialServices">Financial Services</option>
                <option value="Brokerage">Brokerage</option>
              </select>
-           </label>
+           </label>           
 				 <!-- </CandidateEmployerPreferences> -->
 
          <!-- <CandidatePositionPreferences> -->
@@ -131,7 +153,9 @@
                <option value="FinancialPlanner">Financial Planner</option>
                <option value="Broker">Broker</option>
              </select>
-           </label><br>
+           </label>
+
+         <div><!--spacer--></div>
 
          <!-- <RelocationConsidered> -->
            <label>Relocation Considered:
@@ -139,25 +163,28 @@
                <option value="no">No</option>
                <option value="yes">Yes</option>
              </select>
-           </label><br>
+           </label>  
+
+         <div><!--spacer--></div>
 
            <label>Describe possible relocations:
-           <input type="text" name="Description" class="form-control"  placeholder="Will consider positions in ..." aria-label="Relocation description"></label>
+           <input type="text" name="Description" class="form-control"  placeholder="Will consider positions in ..." aria-label="Relocation description"/></label>
          <!-- <RelocationConsidered> -->
 
          <!-- </CandidatePositionPreferences> -->
       </div>
-      <div class="input-group" title="<OfferedRemunerationPackage>">
+      <div class="input-group" title="OfferedRemunerationPackage">
          <!-- <OfferedRemunerationPackage> -->
                <!-- <RemunerationRange> -->
                  <!--<RemunerationMinimumAmount currencyID="USD">-->
                    <label>Remuneration minimum:
-                   <span class="input-group-addon">$</span>
-                   <input type="text" name="RemunerationMinimumAmount" class="form-control"  placeholder="RemunerationMinimumAmount" aria-label="Amount (to the nearest dollar)"></label>
+                    <span class="input-group-addon">$</span>
+                    <input type="text" name="RemunerationMinimumAmount" class="form-control"  placeholder="RemunerationMinimumAmount" aria-label="Amount (to the nearest dollar)"/>
+                   </label>
                  <!-- </RemunerationMinimumAmount> -->
 
                  <!-- <RemunerationRateIntervalCode> -->
-                 <label>RemunerationRateInterval
+                 <label>RemunerationRateInterval:
                    <select name="RemunerationRateIntervalCode" class="form-control">
                     <option value="undef">None</option>
                     <option value="Hour">Hour</option>
@@ -170,24 +197,30 @@
                <!-- </RemunerationRange> -->
              <!-- </OfferedRemunerationPackage> -->
       </div>
-      <br>
-      <div id="employmentHistory"class="input-group" title="employmentHistory">
+
+         <div><!--spacer--></div>
+
+      <div id="employmentHistory" class="input-group" title="employmentHistory">
         <!-- Could also be called Experience or Work History -->
         <div class="well well-sm">Employment History</div>
           <div id="eventID">
             <label>Start Date:
-                <input type="text" name="startDate"  placeholder="startDate" class="form-control"></label>
+                <input type="text" name="startDate"  placeholder="startDate" class="form-control"/></label>
             <label>End Date:
-                <input type="text" name="endDate" placeholder="endDate" class="form-control"></label>
+                <input type="text" name="endDate" placeholder="endDate" class="form-control"/></label>
             <label>Organization Name:
-                <input type="text" name="organizationName" placeholder="organizaionName" class="form-control"></label><br>
+                <input type="text" name="organizationName" placeholder="organizaionName" class="form-control"/></label>
+                <div><!--spacer--></div>
             <label>Job Title:
-                <input type="text" name="jobTitle" class="form-control" placeholder="jobTitle"></label>
+                <input type="text" name="jobTitle" class="form-control" placeholder="jobTitle"/></label>
             <label>Job Description:
-               <textarea name="jobDescription" class="form-control" rows="3" cols="50" placeholder="jobDescription"></textarea></label>
+               <textarea name="jobDescription" class="form-control" rows="3" cols="50" placeholder="jobDescription"></textarea>
+            </label>
           </div><!--/eventID-->
       </div>
-      <br>
+
+         <div><!--spacer--></div>
+
       <div id="skills" class="input-group">
         <div class="well well-sm">Skills</div>
           <div id="skillID">
@@ -198,40 +231,52 @@
                     <option value="manual">Manual</option>
                     <option value="interpersonal">Interpersonal</option>
                     <option value="procedural">Procedural</option>
-                </select></label>
+                </select>
+            </label>
             <label>Organization Name:
-                <input type="text" name="organizationName" class="form-control" placeholder="organizationName"></label>
+                <input type="text" name="organizationName" class="form-control" placeholder="organizationName"/></label>
             <label>Skill Title:
-                <input type="text" name="skillTitle" class="form-control" placeholder="skillTitle"></label><br>
+                <input type="text" name="skillTitle" class="form-control" placeholder="skillTitle"/></label>
             <label>Skill Description:
-               <textarea name="skillDescription" class="form-control" rows="3" cols="50" placeholder="skillDescription"></textarea></label>
+               <textarea name="skillDescription" class="form-control" rows="3" cols="50" placeholder="skillDescription"></textarea>
+            </label>
             <label>Tags:
-               <textarea name="skillTags" class="form-control" rows="3" cols="50" placeholder="skillTags"></textarea></label>
-               <br>
+               <textarea name="skillTags" class="form-control" rows="3" cols="50" placeholder="skillTags"></textarea>
+            </label>
+
+            <div><!--spacer--></div>
+
           </div><!-- / skillID-->
       </div>
-      <br>
+
+       <div><!--spacer--></div>
+
       <div class="input-group">
-        <div id="educationAndTraining" class="well well-sm">Education and Training</div>
+        <div id="educationAndTraining" class="well well-sm">
+        Education and Training
+        </div>
           <div id="eduID">
           <label>Organization Name:
-                <input type="text" name="organizationNameEdu" class="form-control" placeholder="organizationNameEdu"></label>
+                <input type="text" name="organizationNameEdu" class="form-control" placeholder="organizationNameEdu"/>
+          </label>
           <label>Degree:
-                <input type="text" name="degree" class="form-control" placeholder="degree"></label>
+                <input type="text" name="degree" class="form-control" placeholder="degree"/></label>
           <label>Certification:
-                <input type="text" name="certification" class="form-control" placeholder="certification"></label>
+                <input type="text" name="certification" class="form-control" placeholder="certification"/></label>
           <label>Completion Date
-                <input type="text" name="completionDateEdu" class="form-control" placeholder="completionDateEdu"></label>
+                <input type="text" name="completionDateEdu" class="form-control" placeholder="completionDateEdu"/></label>
           </div><!-- /eduID -->
         </div><!-- /educationAndTraining -->
-      </div>
-      <br>
+
+      <div><!--spacer--></div>
+
       <div class="input-group">
         <div class="well well-sm">Summary of Qualifications</div>
           <label>Bulleted List:
-               <textarea name="summaryQualifications" class="form-control" rows="3" cols="50" placeholder="summaryQualifications"></textarea></label><br>
+               <textarea name="summaryQualifications" class="form-control" rows="3" cols="50" placeholder="summaryQualifications"></textarea>
+          </label>
       </div>
 
     <!-- </CandidateProfile> -->
-
+     
     </form>
