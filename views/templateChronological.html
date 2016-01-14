@@ -1,5 +1,8 @@
-<div>
-	 <p>{{firstName}} {{middleName}} {{lastName}}<br/>
+<div id="templateChronological" data-ng-controller="htmlController">
+	 <p>{{CandidatePerson.PreferredSalutationCode}} 
+	    {{CandidatePerson.GivenName}} 
+	    {{middleName}} 
+	    {{CandidatePerson.FamilyName}}<br/>
 	    {{streetAddress}}<br/>
 	    {{city}}, {{state}}, {{zip}}<br/>
 	    e: {{email}}<br/>
@@ -17,4 +20,4 @@
  	 </p>
  	 <p>Education and Training</p>
  	 <p>{{degree}}{{certification}}{{completionDateEdu}}</p>
-</div>
+</div><!-- /data-ng-controller="htmlController" -->

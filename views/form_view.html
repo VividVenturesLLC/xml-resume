@@ -1,8 +1,10 @@
-     <form id="CandidatePerson" data-ng-controller="candidatePersonCtrl">
+     <form id="inputData" data-ng-controller="cpFormCtrl">
      
-     <pre><!-- Debug only to see if ng-model is binding -->
-        {{CandidatePerson.ContactInformationPublic}}
-        {{CandidatePerson.PreferredSalutationCode}}
+     
+     <pre style="position:fixed; top: 80px; z-index: 10; background-color: rgba(255, 255, 255, 0.9);">
+     Debug pane - JSON of the model 'CandidatePerson'
+     <!-- Debug only to see what ng-model is binding -->
+        {{CandidatePerson | json}}
      </pre>
 
      <div class="input-group">
@@ -30,10 +32,10 @@
          </label> 
 
           <label>First Name:
-               <input type="text" name="GivenName" class="form-control" placeholder="GivenName"/></label>
+               <input type="text" name="GivenName" class="form-control" placeholder="GivenName" data-ng-model="CandidatePerson.GivenName"/></label>
           
           <label>Last Name:
-                <input type="text" name="FamilyName" class="form-control" placeholder="FamilyName"/></label>
+                <input type="text" name="FamilyName" class="form-control" placeholder="FamilyName" data-ng-model="CandidatePerson.FamilyName"/></label>
           
           <label>Middle Name:
                 <input type="text" name="MiddleName" class="form-control" placeholder="MiddleName"/></label>

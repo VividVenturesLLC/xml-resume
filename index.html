@@ -39,6 +39,9 @@
 
 <!-- ======== ======== ======== ======== ======== ======== ======== ======== -->
    <body data-ng-app="resumeApp">
+
+    <div data-ng-controller="mainController">
+
     <div id="titlebar" data-ng-controller="titlebarCtrl">
 	    <dl class="dl-horizontal container">
 	      <dt>XML-Resume</dt>
@@ -129,7 +132,7 @@
     <!--JSON view-->
     <div role="tabpanel" class="tab-pane" id="jsonView" >
     JSON view w/ data-ng-bind here ==>>
-    <pre data-ng-bind="myModelNamehHere | json"></pre>
+    <pre data-ng-bind="CandidatePerson | json"></pre>
     </div><!--/container-->
     <!--###########################################################-->
 
@@ -172,5 +175,8 @@
     <!-- /Tab panes-->
     
     <hr><br>
+    
+    </div><!-- /data-ng-controller="mainController" -->
+    
    </body>
 </html>
