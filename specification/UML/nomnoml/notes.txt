@@ -1,0 +1,33 @@
+## [nomnoml.com](http://www.nomnoml.com/)
+
+1/16/2016 10:50AM
+  Adopt 'nomnoml' as the UML diagram editor for this project.
+  Currently using their website for editing.
+
+### CDN
+* [cdnjs/nomnoml](https://cdnjs.com/libraries/nomnoml)
+
+### Project source
+* [on github](https://github.com/skanaar/nomnoml)
+
+
+### Code and Figure directory structure
+
+Where the .png is the image for the figure and
+.txt is the file that contains the code that 
+will create the image with nomnoml
+
+Example of possible file location and naming
+
+* UML
+  * figures
+    * 01
+      * 01_1.png
+      * 01_1.txt
+      * 01_2.png
+      * 01_2.txt
+    * 02
+      * 02_1.png
+      * 02_1.txt
+      * 02_2.png
+      * 02_2.txt
