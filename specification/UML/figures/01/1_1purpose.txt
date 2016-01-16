@@ -1,0 +1,13 @@
+[<actor>Candidate.Person] - [<usecase>Revise;resume;UC003]
+[Candidate.Person]->[Resume]
+[Resume|CandidateID: Int|CRUD()|
+  [properties]<--[Schema_Candidate.json]
+]
+[Resume]<- *[hropenstandards.org|Schema_Candidate: JSON]
+
+[<actor>Recruiter] - [<usecase>Expect format; w/HR-JSON v.?; UC002]
+[Recruiter]<-[Resume]
+
+#fontSize: 16
+#spacing: 25
+#padding: 12
