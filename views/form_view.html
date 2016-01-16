@@ -1,0 +1,284 @@
+     <form id="inputData" data-ng-controller="cpFormCtrl">
+     
+     
+     <pre style="position:fixed; top: 80px; z-index: 10; background-color: rgba(255, 255, 255, 0.9);">
+     Debug pane - JSON of the model 'CandidatePerson'
+     <!-- Debug only to see what ng-model is binding -->
+        {{CandidatePerson | json}}
+     </pre>
+
+     <div class="input-group">
+        <div class="well well-sm">Make public
+        </div>
+          <label>Make my contact information and resume public:</label>
+           <input type="checkbox" value="" name="ContactInformationPublic" data-ng-model="CandidatePerson.ContactInformationPublic"/>
+     </div>
+      
+    <div><!--spacer--></div>
+
+      
+    <div><!--spacer--></div>
+
+    <div><!-- CandidatePerson --><label>CandidatePerson</label>
+      <div id="PersonName" class="input-group">
+        <label>Salutation:
+          <select name="PreferredSalutationCode" class="form-control" data-ng-model="CandidatePerson.PreferredSalutationCode">
+            <option>Salut</option>
+            <option value="Ms">Ms.</option>
+            <option value="Mrs">Mrs.</option>
+            <option value="Mr">Mr.</option>
+            <option value="Dr">Dr.</option>
+          </select>
+         </label> 
+
+          <label>First Name:
+               <input type="text" name="GivenName" class="form-control" placeholder="GivenName" data-ng-model="CandidatePerson.GivenName"/></label>
+          
+          <label>Last Name:
+                <input type="text" name="FamilyName" class="form-control" placeholder="FamilyName" data-ng-model="CandidatePerson.FamilyName"/></label>
+          
+          <label>Middle Name:
+                <input type="text" name="MiddleName" class="form-control" placeholder="MiddleName"/></label>
+      </div><!-- /PersonName -->
+
+      <div><!--spacer--></div>
+
+      <div id="ChannelCode" class="input-group" title="Communication">
+          Telephone:
+         <div><!--spacer--></div>
+          <label><!--UseCode-->Personal<!--/UseCode--> Mobile:
+                <input type="tel" name="mobileTel" class="form-control" placeholder="mobileTel"/></label>
+          <label><!--UseCode-->Personal<!--UseCode--> Home:
+                <input type="tel" name="homeTel" class="form-control" placeholder="homeTel"/></label>
+          <label><!--UseCode-->Business<!--UseCode-->:
+                <input type="tel" name="officeTel" class="form-control" placeholder="officeTel"/></label>
+         <div><!--spacer--></div>
+          Social:
+          <label>Email:
+                <input type="email" name="email" class="form-control" placeholder="email"/></label>
+          <label>Links:
+                <input type="url" name="myLinks" class="form-control" size="50" placeholder="myLinks"/></label>
+      </div>
+
+      <div id="MailingCountryCode" class="input-group" title="Communication">
+          <!--get country data from http://www.geonames.org/ -->
+          <!-- Mailing: -->
+          <label>Country mailing:
+                 <select name="MailingCountryCode" class="form-control">
+                    <option value="undef">-</option>
+                    <option value="US">United States</option>
+                    <option value="CA">Canada</option>
+                    <option value="MX">Mexico</option>
+                </select>
+          </label>
+          <label>PostalCode:
+                <input type="text" name="PostalCode" class="form-control" placeholder="PostalCode"/></label>
+      </div>
+
+      <div id="DomicileAddress" class="input-group" title="Communication">
+          <label>AddressLine:
+                <input type="text" name="AddressLine" class="form-control" placeholder="AddressLine"/></label>
+          <!-- populate city based on postal code selection selection-->
+          <label>CityName:
+                <input type="text" name="CityName" class="form-control" placeholder="CityName"/></label>
+          <!-- populate state option based on country (and postal code) selection-->
+          <label>CountrySubDivisionCode:
+                 <select name="CountrySubDivisionCode" class="form-control">
+                    <option value="undef">-</option>
+                    <option value="AK">AK</option>
+                    <option value="AL">AL</option>
+                    <option value="MI">MI</option>
+                    <option value="WY">WY</option>
+                </select>
+          </label>
+      </div>
+    </div><!--/CandidatePerson-->
+
+      <div><!--spacer--></div>
+
+      <!-- <CandidateProfile> --> CandidateProfile
+      <div class="input-group" title="PersonAvailability">
+        <div class="well well-sm">Availability</div>
+         <!--<PersonAvailability>-->
+           <label>NoticePeriodMeasure:
+             <select name="NoticePeriodMeasure" class="form-control">
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+               <option value="not">Not Available</option>
+             </select>
+           </label>           
+           <label>unitCode:
+             <select name="unitCode" class="form-control">
+               <option value="week">week</option>
+               <option value="month">month</option>
+               <option value="year">year</option>
+             </select>
+           </label>
+
+      </div><!--</PersonAvailability>-->
+
+      <div><!--spacer--></div>
+
+      <div class="input-group">
+        <div class="well well-sm">Objective</div>
+          <label>Objective Title:
+                <input type="text" name="objectiveTitle" class="form-control"  placeholder="objectiveTitle"/></label>
+          <label>Objective Description:
+                <input type="text" name="objectiveDescription" placeholder="objectiveDescription" class="form-control"/></label>
+        <label>Display:
+          <input type="checkbox" value="" name="displayObjective"/></label>
+      </div>
+
+     <div><!--spacer--></div>
+
+
+      <div class="input-group">
+        <div class="well well-sm">CandidateEmployerPreferences</div>
+
+         <!-- <CandidateEmployerPreferences> -->
+           <label>CandidateEmployerPreferences:
+             <select id="CandidateEmployerPreferences" name="IndustryCode" class="form-control">
+               <option value="undef">None</option>
+               <option value="FinancialServices">Financial Services</option>
+               <option value="Brokerage">Brokerage</option>
+             </select>
+           </label>           
+				 <!-- </CandidateEmployerPreferences> -->
+
+         <!-- <CandidatePositionPreferences> -->
+           <label>Candidate Position Preferences:
+             <select id="CandidatePositionPreferences" name="PositionTitle" class="form-control">
+               <option value="undef">None</option>
+               <option value="FinancialAnalyst">Financial Analyst</option>
+               <option value="FinancialPlanner">Financial Planner</option>
+               <option value="Broker">Broker</option>
+             </select>
+           </label>
+
+         <div><!--spacer--></div>
+
+         <!-- <RelocationConsidered> -->
+           <label>Relocation Considered:
+             <select id="RelocationConsidered" name="RelocationConsideredIndicator" class="form-control">
+               <option value="no">No</option>
+               <option value="yes">Yes</option>
+             </select>
+           </label>  
+
+         <div><!--spacer--></div>
+
+           <label>Describe possible relocations:
+           <input type="text" name="Description" class="form-control"  placeholder="Will consider positions in ..." aria-label="Relocation description"/></label>
+         <!-- <RelocationConsidered> -->
+
+         <!-- </CandidatePositionPreferences> -->
+      </div>
+      <div class="input-group" title="OfferedRemunerationPackage">
+         <!-- <OfferedRemunerationPackage> -->
+               <!-- <RemunerationRange> -->
+                 <!--<RemunerationMinimumAmount currencyID="USD">-->
+                   <label>Remuneration minimum:
+                    <span class="input-group-addon">$</span>
+                    <input type="text" name="RemunerationMinimumAmount" class="form-control"  placeholder="RemunerationMinimumAmount" aria-label="Amount (to the nearest dollar)"/>
+                   </label>
+                 <!-- </RemunerationMinimumAmount> -->
+
+                 <!-- <RemunerationRateIntervalCode> -->
+                 <label>RemunerationRateInterval:
+                   <select name="RemunerationRateIntervalCode" class="form-control">
+                    <option value="undef">None</option>
+                    <option value="Hour">Hour</option>
+                    <option value="Week">Week</option>
+                    <option value="Month">Month</option>
+                    <option value="Year">Year</option>
+                   </select>
+                 </label>
+                 <!-- </RemunerationRateIntervalCode> -->
+               <!-- </RemunerationRange> -->
+             <!-- </OfferedRemunerationPackage> -->
+      </div>
+
+         <div><!--spacer--></div>
+
+      <div id="employmentHistory" class="input-group" title="employmentHistory">
+        <!-- Could also be called Experience or Work History -->
+        <div class="well well-sm">Employment History</div>
+          <div id="eventID">
+            <label>Start Date:
+                <input type="text" name="startDate"  placeholder="startDate" class="form-control"/></label>
+            <label>End Date:
+                <input type="text" name="endDate" placeholder="endDate" class="form-control"/></label>
+            <label>Organization Name:
+                <input type="text" name="organizationName" placeholder="organizaionName" class="form-control"/></label>
+                <div><!--spacer--></div>
+            <label>Job Title:
+                <input type="text" name="jobTitle" class="form-control" placeholder="jobTitle"/></label>
+            <label>Job Description:
+               <textarea name="jobDescription" class="form-control" rows="3" cols="50" placeholder="jobDescription"></textarea>
+            </label>
+          </div><!--/eventID-->
+      </div>
+
+         <div><!--spacer--></div>
+
+      <div id="skills" class="input-group">
+        <div class="well well-sm">Skills</div>
+          <div id="skillID">
+            <label>Category:
+                 <select name="skillCategory" class="form-control">
+                    <option value="management">Management</option>
+                    <option value="equipment">Equipment</option>
+                    <option value="manual">Manual</option>
+                    <option value="interpersonal">Interpersonal</option>
+                    <option value="procedural">Procedural</option>
+                </select>
+            </label>
+            <label>Organization Name:
+                <input type="text" name="organizationName" class="form-control" placeholder="organizationName"/></label>
+            <label>Skill Title:
+                <input type="text" name="skillTitle" class="form-control" placeholder="skillTitle"/></label>
+            <label>Skill Description:
+               <textarea name="skillDescription" class="form-control" rows="3" cols="50" placeholder="skillDescription"></textarea>
+            </label>
+            <label>Tags:
+               <textarea name="skillTags" class="form-control" rows="3" cols="50" placeholder="skillTags"></textarea>
+            </label>
+
+            <div><!--spacer--></div>
+
+          </div><!-- / skillID-->
+      </div>
+
+       <div><!--spacer--></div>
+
+      <div class="input-group">
+        <div id="educationAndTraining" class="well well-sm">
+        Education and Training
+        </div>
+          <div id="eduID">
+          <label>Organization Name:
+                <input type="text" name="organizationNameEdu" class="form-control" placeholder="organizationNameEdu"/>
+          </label>
+          <label>Degree:
+                <input type="text" name="degree" class="form-control" placeholder="degree"/></label>
+          <label>Certification:
+                <input type="text" name="certification" class="form-control" placeholder="certification"/></label>
+          <label>Completion Date
+                <input type="text" name="completionDateEdu" class="form-control" placeholder="completionDateEdu"/></label>
+          </div><!-- /eduID -->
+        </div><!-- /educationAndTraining -->
+
+      <div><!--spacer--></div>
+
+      <div class="input-group">
+        <div class="well well-sm">Summary of Qualifications</div>
+          <label>Bulleted List:
+               <textarea name="summaryQualifications" class="form-control" rows="3" cols="50" placeholder="summaryQualifications"></textarea>
+          </label>
+      </div>
+
+    <!-- </CandidateProfile> -->
+     
+    </form>
