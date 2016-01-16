@@ -30,13 +30,12 @@ var resumeApp = angular.module('resumeApp', ['ngRoute'])
 
 
        if ($scope.CandidatePerson === undefined) {
-       	$scope.CandidatePerson={};
-       	console.log('Creating object $scope.CandidatePerson in mainController');//debug only
-       	}
+           $scope.CandidatePerson={};
+           console.log('Created object $scope.CandidatePerson in mainController');//debug only
+       }
 
       console.log("$scope in mainController:");//debug only
       console.dir($scope);//debug only
-
    })
     	
    .controller('cpFormCtrl', function ($scope, $routeParams) {
