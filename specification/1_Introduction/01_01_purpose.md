@@ -26,4 +26,5 @@
       standards.
 ```
 
+### Figure 1.1
 ![Figure 1.1](../UML/figures/01/1_1.png)
