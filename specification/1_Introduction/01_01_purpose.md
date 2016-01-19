@@ -26,4 +26,4 @@
       standards.
 ```
 
-## [Figure 1.1](../UML/figures/01/1_1.png)
+![Figure 1.1](../UML/figures/01/1_1.png)
