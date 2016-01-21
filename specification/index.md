@@ -24,7 +24,7 @@
   3.4 Communication protocols and interfaces
 
 4. System Features
-  4.1 System feature A
+  4.1 Create a resume referencing schema releaseID
     4.1.1 Description and priority
     4.1.2 Action/result
     4.1.3 Functional requirements

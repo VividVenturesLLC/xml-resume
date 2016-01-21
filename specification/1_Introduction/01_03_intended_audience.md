@@ -11,8 +11,8 @@
   1.3.1.3 Software developers for all stakeholders
 
 
-1.3.2  The HR Open Standards group members may want to
-       comment on the development progress.
+1.3.2  The HR Open Standards Work Group: Recruiting members
+       may want to comment on the development progress.
 
 
 ```
