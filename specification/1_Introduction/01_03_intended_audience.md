@@ -3,10 +3,10 @@
 ```
 1.3.1 Stakeholders:
 
-  1.3.1.1 Candidate Person - the owner of the resume
+  1.3.1.1 Job Seeker - the owner of the resume
 
   1.3.1.2 Recruiter - Human Resource department, job board,
-        Personnel Agency,
+          Personnel Agency,
 
   1.3.1.3 Software developers for all stakeholders
 
