@@ -11,6 +11,9 @@
     
     4.1.2 Action/result
     
+          A validated resume data object should be stored
+          persistently locally or in SaaS.
+    
     4.1.3 Functional requirements
     
     4.1.3.1 A copy of the Schema at a given releaseID
